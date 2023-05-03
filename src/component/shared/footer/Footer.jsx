@@ -23,7 +23,7 @@ const Footer = () => {
                 <Link to='/'>Home</Link><br />
                 <Link to='/blog'>Blog</Link><br />
                 <Link to='/sign-up'>Sign up</Link><br />
-                <Link to='/sign-in'>Sign in</Link>
+                <Link to='/sign-infdsf'>Sign in</Link>
                 </div>
                 <div className='me-5'>
                 <h5 className='fs-4 text-decoration-underline'>SOCIAL</h5>
