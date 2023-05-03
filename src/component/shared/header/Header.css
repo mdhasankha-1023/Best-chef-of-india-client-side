@@ -1,0 +1,17 @@
+nav a{
+    text-decoration:  none;
+    color: black;
+}
+nav a:hover{
+    color: #E9351F;
+}
+
+/* button design */
+.btn-link{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+.btn-link:hover{
+    color: white;
+}
