@@ -1,0 +1,7 @@
+.footer-text a{
+    text-decoration: none;
+    color: rgb(54, 52, 52);
+}
+.footer-text a:hover{
+    color: #EB4A36;
+}

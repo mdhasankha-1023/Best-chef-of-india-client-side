@@ -19,7 +19,7 @@ const Header = () => {
           <Nav className="ms-auto">
             <FaUserCircle className='fs-1 me-3'></FaUserCircle>
             <Button className='px-5 rounded' variant="danger">
-              <Link className='btn-link' to='/login'>Login</Link>
+              <Link className='btn-link' to='/sign-in'>Sign in</Link>
             </Button>
           </Nav>
         </Navbar.Collapse>
