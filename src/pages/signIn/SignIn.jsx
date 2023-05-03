@@ -8,16 +8,16 @@ const SignIn = () => {
     return (
         <Container className='my-5'>
             <div className='w-50 mx-auto border py-3 px-5 rounded'>
-                <h1 className='text-center mb-3'>Place Sign In!!</h1>
+                <h1 className='text-center mb-3'>Please Sign In!!</h1>
                 <Form>
                     <Form.Group className="mb-3">
                         <Form.Label className='fs-4'>Email</Form.Label>
-                        <Form.Control className='py-3' type="email" placeholder="Enter email" />
+                        <Form.Control className='py-3 fs-4' type="email" placeholder="Enter email" />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label className='fs-4'>Password</Form.Label>
-                        <Form.Control className='py-3' type="password" placeholder="Password" />
+                        <Form.Control className='py-3 fs-4' type="password" placeholder="Password" />
                     </Form.Group>
                     <Button className='w-100 py-2 fs-4 mt-4 ' variant="danger" type="submit">
                         Sign In
@@ -32,7 +32,7 @@ const SignIn = () => {
                             <FaGithub className='me-3' size='1.5em'></FaGithub>
                             Github
                         </div>
-                        <p className='text-center fs-4 mt-4'>No account!! <Link>Sign up</Link></p>
+                        <p className='text-center fs-4 mt-4'>No account!! please <Link to='/sign-up'>Sign up</Link></p>
 
                 </Form>
             </div>
