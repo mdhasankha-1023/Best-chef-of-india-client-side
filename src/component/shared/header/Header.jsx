@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css'
 import logo from '../../../assets/Company-logo/logo.png'
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
@@ -8,6 +8,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
+  
 
   // handle sign-Out button
   const handleSignOutBtn = () => {
@@ -17,6 +18,9 @@ const Header = () => {
       console.log(error)
     })
   }
+  console.log(user)
+
+  
 
   return (
     <Navbar expand="lg">
@@ -32,8 +36,12 @@ const Header = () => {
             {
               user ?
                 <>
-                  <Image src="holder.js/171x180" roundedCircle />
-                  <FaUserCircle className='fs-1 me-3'></FaUserCircle>
+                {
+                  user.photoURL === null ? <FaUserCircle className='me-3' size='3em'></FaUserCircle>
+                  :
+                  <Image className='me-3' style={{height: 50, width: 50}} src={user.photoURL} roundedCircle />
+                }
+                  
                   <Button onClick={handleSignOutBtn} className='px-5 rounded' variant="danger">Sign out</Button>
                 </>
                 :

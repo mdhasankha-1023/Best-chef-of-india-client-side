@@ -42,6 +42,7 @@ const SignIn = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)
@@ -54,6 +55,7 @@ const SignIn = () => {
             .then(result => {
                 const loggedUser = result.user;
                console.log(loggedUser)
+               navigate(from, { replace: true })
 
             })
             .catch(error => {
