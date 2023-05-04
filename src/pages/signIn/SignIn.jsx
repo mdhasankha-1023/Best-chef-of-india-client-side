@@ -1,16 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 
+
 const SignIn = () => {
-    const {user, signInWithGoogle, signInWithGithub, signIn} = useContext(AuthContext)
+    const { user, signInWithGoogle, signInWithGithub, signIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
     
+
     console.log(user)
     // handle sign-in form
     const handleSignInForm = (event) => {
@@ -18,43 +20,45 @@ const SignIn = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+
         signIn(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser) 
-            form.reset()
-            navigate(from, {replace: true} )
-        })
-        .catch(error => {
-            console.log(error)
-        })
-        
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                form.reset()
+                navigate(from, { replace: true })
+                
+            })
+            .catch(error => {
+            
+                
+            })
+
     }
 
     // handle google btn
     const handleGoogleBtn = () => {
         signInWithGoogle()
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser)
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+               
+            })
+            .catch(error => {
+            
+            })
     }
 
     // handle Github btn
     const handleGithubBtn = () => {
         signInWithGithub()
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+               
+
+            })
+            .catch(error => {
+              
+            })
     }
 
     return (
@@ -74,19 +78,20 @@ const SignIn = () => {
                     <Button className='w-100 py-2 fs-4 mt-4 ' variant="danger" type="submit">
                         Sign In
                     </Button>
-                    <p className='text-center mt-5 fs-3'>Or sign in with</p>
-                   
-                        <div style={{cursor: 'pointer'}} onClick={handleGoogleBtn} className='fs-4 border py-2 text-center mb-3 text-danger'>
-                            <FaGoogle className='me-3' size='1.5em'></FaGoogle>
-                            Google
-                        </div>
-                        <div style={{cursor: 'pointer'}} onClick={handleGithubBtn} className='fs-4 border py-2 text-center text-secondary'>
-                            <FaGithub className='me-3' size='1.5em'></FaGithub>
-                            Github
-                        </div>
-                        <p className='text-center fs-4 mt-4'>No account!! please <Link to='/sign-up'>Sign up</Link></p>
 
                 </Form>
+                    <p className='text-center mt-5 fs-3'>Or sign in with</p>
+
+                    <div style={{ cursor: 'pointer' }} onClick={handleGoogleBtn} className='fs-4 border py-2 text-center mb-3 text-danger'>
+                        <FaGoogle className='me-3' size='1.5em'></FaGoogle>
+                        Google
+                    </div>
+                    <div style={{ cursor: 'pointer' }} onClick={handleGithubBtn} className='fs-4 border py-2 text-center text-secondary'>
+                        <FaGithub className='me-3' size='1.5em'></FaGithub>
+                        Github
+                    </div>
+                    <p className='text-center fs-4 mt-4'>No account!! please <Link to='/sign-up'>Sign up</Link></p>
+                    
             </div>
         </Container>
     );

@@ -24,19 +24,19 @@ const BestRecipes = () => {
         <Container className='my-5'>
             <h1 className='text-center my-5'>Best Recipes</h1>
             <Row className='g-4'>
-            {
-                showAll ? recipes.map(recipe => <Col sm={4}>
-                    <BestRecipe
-                    key={recipe.id}
-                    recipe={recipe}></BestRecipe>
-                    </Col>)
-                    :
-                    subSetOfRecipes.map(recipe => <Col sm={4}>
+                {
+                    showAll ? recipes.map(recipe => <Col sm={12} md={6}>
                         <BestRecipe
                         key={recipe.id}
                         recipe={recipe}></BestRecipe>
                         </Col>)
-            }
+                        :
+                        subSetOfRecipes.map(recipe => <Col sm={4}>
+                            <BestRecipe
+                            key={recipe.id}
+                            recipe={recipe}></BestRecipe>
+                            </Col>)
+                }
             </Row>
             <div className='text-center mt-5'>
             {

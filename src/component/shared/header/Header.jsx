@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Header.css'
 import logo from '../../../assets/Company-logo/logo.png'
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../../context/AuthProvider';
@@ -32,6 +32,7 @@ const Header = () => {
             {
               user ?
                 <>
+                  <Image src="holder.js/171x180" roundedCircle />
                   <FaUserCircle className='fs-1 me-3'></FaUserCircle>
                   <Button onClick={handleSignOutBtn} className='px-5 rounded' variant="danger">Sign out</Button>
                 </>

@@ -1,11 +1,7 @@
-.banner-img{
-    width: 100%;
-    height: 700px;
-    border-radius: 30px;
+.banner-title{
+    font-size: 70px;
 }
-.banner-text h1{
-    font-size: 80px;
-}
-.banner-text p{
+.banner-text{
     color: rgba(255, 255, 255, 0.726);
+    font-size: 18px;
 }

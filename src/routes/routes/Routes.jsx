@@ -9,6 +9,7 @@ import SignUp from "../../pages/signUp/SignUp";
 import ErrorPage from "../../pages/errorPage/ErrorPage";
 import ChefRecipes from "../../pages/chefRecipes/ChefRecipes";
 import PrivetRoutes from "../privetRoutes/PrivetRoutes";
+import BlogPage from "../../pages/blogPage/BlogPage";
 
   const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ import PrivetRoutes from "../privetRoutes/PrivetRoutes";
         {
           path: '/sign-up',
           element: <SignUp></SignUp>
+        },
+        {
+          path: '/blog',
+          element: <BlogPage></BlogPage>
         },
         {
           path: '/chef-recipes/:id',
