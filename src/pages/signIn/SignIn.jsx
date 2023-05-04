@@ -6,9 +6,9 @@ import { AuthContext } from '../../context/AuthProvider';
 
 
 const SignIn = () => {
-    const {user, signInWithGoogle, signInWithGithub} = useContext(AuthContext)
+    const {user, signInWithGoogle, signInWithGithub, signIn} = useContext(AuthContext)
+    
     console.log(user)
-
     // handle sign-in form
     const handleSignInForm = (event) => {
         event.preventDefault();
@@ -16,6 +16,15 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser) 
+            form.reset()
+        })
+        .catch(error => {
+            console.log(error)
+        })
         
     }
 
@@ -37,6 +46,7 @@ const SignIn = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser)
+            
         })
         .catch(error => {
             console.log(error.message)
@@ -62,11 +72,11 @@ const SignIn = () => {
                     </Button>
                     <p className='text-center mt-5 fs-3'>Or sign in with</p>
                    
-                        <div onClick={handleGoogleBtn} className='fs-4 border py-2 text-center mb-3 text-danger'>
+                        <div style={{cursor: 'pointer'}} onClick={handleGoogleBtn} className='fs-4 border py-2 text-center mb-3 text-danger'>
                             <FaGoogle className='me-3' size='1.5em'></FaGoogle>
                             Google
                         </div>
-                        <div onClick={handleGithubBtn} className='fs-4 border py-2 text-center text-secondary'>
+                        <div style={{cursor: 'pointer'}} onClick={handleGithubBtn} className='fs-4 border py-2 text-center text-secondary'>
                             <FaGithub className='me-3' size='1.5em'></FaGithub>
                             Github
                         </div>
