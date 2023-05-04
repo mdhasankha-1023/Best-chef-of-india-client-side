@@ -8,7 +8,7 @@ const BestChefs = () => {
 
 
     useEffect( () => {
-        fetch('http://localhost:5000/all-chefs')
+        fetch('https://best-chef-of-india-server-mdhasankhan-123.vercel.app/all-chefs')
         .then(res => res.json())
         .then(data => setAllChefs(data))
     } ,[])

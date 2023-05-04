@@ -36,7 +36,7 @@ import BlogPage from "../../pages/blogPage/BlogPage";
         {
           path: '/chef-recipes/:id',
           element: <PrivetRoutes><ChefRecipes></ChefRecipes></PrivetRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/all-chefs/${params.id}`)
+          loader: ({params}) => fetch(`https://best-chef-of-india-server-mdhasankhan-123.vercel.app/all-chefs/${params.id}`)
         }
       ]
     }

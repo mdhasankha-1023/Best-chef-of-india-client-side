@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='pt-5 border-top'>
+        <div className='pt-5 border-top mt-5'>
            <Container>
             <div className='d-flex align-items-center justify-content-between'>
                 <img src={logo} alt="" />

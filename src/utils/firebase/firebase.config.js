@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCGZEzeik2CS2SyMap3l8CIuHe6wBRa2hg",
-  authDomain: "best-chef-of-india.firebaseapp.com",
-  projectId: "best-chef-of-india",
-  storageBucket: "best-chef-of-india.appspot.com",
-  messagingSenderId: "851820608823",
-  appId: "1:851820608823:web:70d1431148d9d29522eeb2"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase

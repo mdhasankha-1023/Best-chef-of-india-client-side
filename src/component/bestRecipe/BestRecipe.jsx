@@ -8,7 +8,7 @@ const BestRecipe = ({ recipe }) => {
 
     return (
         <div>
-            <Card style={{ width: '22rem'}}>
+            <Card className='mx-auto' style={{ width: '22rem'}}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

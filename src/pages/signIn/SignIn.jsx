@@ -30,7 +30,7 @@ const SignIn = () => {
                 
             })
             .catch(error => {
-            
+                console.log(error)
                 
             })
 
@@ -41,10 +41,10 @@ const SignIn = () => {
         signInWithGoogle()
             .then(result => {
                 const loggedUser = result.user;
-               
+                console.log(loggedUser)
             })
             .catch(error => {
-            
+                console.log(error)
             })
     }
 
@@ -53,11 +53,11 @@ const SignIn = () => {
         signInWithGithub()
             .then(result => {
                 const loggedUser = result.user;
-               
+               console.log(loggedUser)
 
             })
             .catch(error => {
-              
+              console.log(error)
             })
     }
 

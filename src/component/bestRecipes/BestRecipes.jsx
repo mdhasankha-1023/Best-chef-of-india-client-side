@@ -7,7 +7,7 @@ const BestRecipes = () => {
     const [showAll, setShowAll] = useState(false)
 
     useEffect( () => {
-        fetch('http://localhost:5000/all-recipes')
+        fetch('https://best-chef-of-india-server-mdhasankhan-123.vercel.app/all-recipes')
         .then(res => res.json())
         .then(data => setRecipes(data))
     } , [])
@@ -25,13 +25,13 @@ const BestRecipes = () => {
             <h1 className='text-center my-5'>Best Recipes</h1>
             <Row className='g-4'>
                 {
-                    showAll ? recipes.map(recipe => <Col sm={12} md={6}>
+                    showAll ? recipes.map(recipe => <Col sm={6}>
                         <BestRecipe
                         key={recipe.id}
                         recipe={recipe}></BestRecipe>
                         </Col>)
                         :
-                        subSetOfRecipes.map(recipe => <Col sm={4}>
+                        subSetOfRecipes.map(recipe => <Col sm={6}>
                             <BestRecipe
                             key={recipe.id}
                             recipe={recipe}></BestRecipe>
