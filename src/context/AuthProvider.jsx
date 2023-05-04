@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../utils/firebase/fiebase.config';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
 
 
 export const AuthContext = createContext(app)
@@ -42,12 +42,18 @@ const AuthProvider = ({children}) => {
        }
     } , [])
 
+    // user log out
+    const logOut = () => {
+        return signOut(auth)
+    }
+
     const authInfo = {
         user,
         signInWithGoogle,
         signInWithGithub,
         signUp,
-        signIn
+        signIn,
+        logOut
     }
     return (
         <AuthContext.Provider value={authInfo}>

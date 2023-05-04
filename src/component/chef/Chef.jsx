@@ -2,6 +2,7 @@ import React from 'react';
 import './Chef.css'
 import { Button, Card, Container } from 'react-bootstrap';
 import { FaThumbsUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const Chef = ({ chef }) => {
@@ -20,7 +21,9 @@ const Chef = ({ chef }) => {
                     <h5>Exp: {experience}</h5>
                 </Card.Body>
                 <Card.Footer className='py-3 d-flex justify-content-between align-items-center'>
-                <Button variant="danger">View recipes</Button>
+                <Button className='cart-btn' variant="danger">
+                    <Link  to='/chef-recipes'>View recipes</Link>
+                </Button>
                 <div> 
                     <p><FaThumbsUp size='2em'></FaThumbsUp>
                         {likes}</p>
