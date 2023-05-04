@@ -3,6 +3,7 @@ import Header from '../component/shared/header/Header';
 import Banner from '../component/shared/banner/Banner';
 import Footer from '../component/shared/footer/Footer';
 import BestChefs from '../component/bestChefs/BestChefs';
+import BestRecipes from '../component/bestRecipes/BestRecipes';
 
 const Main = () => {
     return (
@@ -10,7 +11,8 @@ const Main = () => {
             <Header></Header>
             <Banner></Banner>
             <BestChefs></BestChefs>
-            {/* <Footer></Footer> */}
+            <BestRecipes></BestRecipes>
+            <Footer></Footer>
         </div>
     );
 };

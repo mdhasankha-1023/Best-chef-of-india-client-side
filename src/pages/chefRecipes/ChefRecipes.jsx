@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ChefRecipes.css'
 import ChefBanner from '../../component/shared/chefBanner/ChefBanner';
-import { useLoaderData } from 'react-router-dom';
 import AllRecipes from '../../component/allRecipes/AllRecipes';
 
 const ChefRecipes = () => {

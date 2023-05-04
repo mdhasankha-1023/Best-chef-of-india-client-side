@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <Navbar expand="lg">
-      <Container className='border-bottom position-sticky top-0'>
+      <Container className='border-bottom'>
         <Navbar.Brand href="#home"><img src={logo} alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
