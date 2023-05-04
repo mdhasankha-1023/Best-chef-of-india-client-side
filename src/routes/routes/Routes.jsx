@@ -17,7 +17,7 @@ import ChefRecipes from "../../pages/chefRecipes/ChefRecipes";
     },
     {
       path: '/',
-      element: <OthersPage></OthersPage>,
+      element: <OthersPage></OthersPage>, 
       children: [
         {
           path: '/sign-in',
@@ -28,8 +28,9 @@ import ChefRecipes from "../../pages/chefRecipes/ChefRecipes";
           element: <SignUp></SignUp>
         },
         {
-          path: '/chef-recipes',
-          element: <ChefRecipes></ChefRecipes>
+          path: '/chef-recipes/:id',
+          element: <ChefRecipes></ChefRecipes>,
+          loader: ({params}) => fetch(`http://localhost:5000/all-chefs/${params.id}`)
         }
       ]
     }

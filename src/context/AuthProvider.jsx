@@ -47,6 +47,9 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
+    // fetch chef info data
+    
+
     const authInfo = {
         user,
         signInWithGoogle,
