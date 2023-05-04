@@ -1,10 +1,17 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import PulseLoader from 'react-spinners/PulseLoader'
 
 const PrivetRoutes = ({children}) => {
-    const {user} = useContext(AuthContext)
+    const {user, loading} = useContext(AuthContext)
     const location = useLocation();
+
+
+    // set spinner
+    if(loading){
+        return <div className='position-absolute bottom-50 end-50'><PulseLoader/></div>
+    }
 
     if(user){
         return children

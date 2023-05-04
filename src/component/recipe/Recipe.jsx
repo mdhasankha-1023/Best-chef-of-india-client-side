@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 
 const Recipe = ({ recipe }) => {
     const { cooking_method, name, rating, img, ingredients } = recipe;
-    console.log(recipe)
+    const [isClicked, setIsClicked] = useState(false)
+
+    // handleHeartBtn
+    const handleHeartBtn = () => {
+        setIsClicked(!isClicked)
+        console.log(isClicked)
+    }
     return (
         <Container className='mt-5'>
             <Card style={{ width: '38rem' }}>
@@ -33,7 +39,7 @@ const Recipe = ({ recipe }) => {
                             readonly
                         />
                     </Card.Text>
-                    <FaHeart className='text-danger' size='2em'></FaHeart>
+                    <FaHeart onClick={handleHeartBtn} className={isClicked === true ? 'text-danger' : 'text-dark'} size='2em'></FaHeart>
                     </div>
 
                 </Card.Body>

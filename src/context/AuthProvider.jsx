@@ -12,23 +12,28 @@ const provider = new GoogleAuthProvider()
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     // google
     const signInWithGoogle = () => {
+        setLoading(true)
        return signInWithPopup(auth, provider)
     }
     // Github
     const signInWithGithub = () => {
+        setLoading(true)
        return signInWithPopup(auth, provider)
     }
 
     // sign up
     const signUp = (email, password) => {
+        setLoading(true)
        return  createUserWithEmailAndPassword(auth, email, password)
     }
 
     // sign in
     const signIn = (email, password) => {
+        setLoading(true)
      return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -36,6 +41,7 @@ const AuthProvider = ({children}) => {
     useEffect( () => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
+            setLoading(false)
         })
        return () =>  {
         unSubscribe()
@@ -47,7 +53,6 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
-    // fetch chef info data
     
 
     const authInfo = {
@@ -56,7 +61,8 @@ const AuthProvider = ({children}) => {
         signInWithGithub,
         signUp,
         signIn,
-        logOut
+        logOut,
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>
