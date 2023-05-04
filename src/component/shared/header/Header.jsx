@@ -18,7 +18,7 @@ const Header = () => {
       console.log(error)
     })
   }
-  console.log(user)
+  
 
   
 
