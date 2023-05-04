@@ -8,6 +8,7 @@ import SignIn from "../../pages/signIn/SignIn";
 import SignUp from "../../pages/signUp/SignUp";
 import ErrorPage from "../../pages/errorPage/ErrorPage";
 import ChefRecipes from "../../pages/chefRecipes/ChefRecipes";
+import PrivetRoutes from "../privetRoutes/PrivetRoutes";
 
   const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ import ChefRecipes from "../../pages/chefRecipes/ChefRecipes";
         },
         {
           path: '/chef-recipes/:id',
-          element: <ChefRecipes></ChefRecipes>,
+          element: <PrivetRoutes><ChefRecipes></ChefRecipes></PrivetRoutes>,
           loader: ({params}) => fetch(`http://localhost:5000/all-chefs/${params.id}`)
         }
       ]
