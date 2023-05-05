@@ -1,19 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import {  ToastContainer } from 'react-toastify';
+
 
 
 
 const SignIn = () => {
-    const { user, signInWithGoogle, signInWithGithub, signIn } = useContext(AuthContext)
+    const { user, signInWithGoogle, signInWithGithub, signIn, handleError, handleSuccess } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
     
 
-    console.log(user)
     // handle sign-in form
     const handleSignInForm = (event) => {
         event.preventDefault();
@@ -22,16 +23,16 @@ const SignIn = () => {
         const password = form.password.value;
 
         signIn(email, password)
-            .then(result => {
+            .then( result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 form.reset()
                 navigate(from, { replace: true })
+                handleSuccess()
                 
             })
             .catch(error => {
-                console.log(error)
-                
+                handleError(error.message)      
             })
 
     }
@@ -43,9 +44,10 @@ const SignIn = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 navigate(from, { replace: true })
+                handleSuccess()
             })
             .catch(error => {
-                console.log(error)
+                handleError(error)
             })
     }
 
@@ -56,15 +58,18 @@ const SignIn = () => {
                 const loggedUser = result.user;
                console.log(loggedUser)
                navigate(from, { replace: true })
-
+               handleSuccess()
             })
             .catch(error => {
-              console.log(error)
+              handleError(error)
             })
     }
 
+    
+
     return (
         <Container className='my-5'>
+            <ToastContainer/>
             <div className='w-50 mx-auto border py-3 px-5 rounded'>
                 <h1 className='text-center mb-3'>Please Sign In!!</h1>
                 <Form onSubmit={handleSignInForm}>

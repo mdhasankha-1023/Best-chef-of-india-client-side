@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import { ToastContainer } from 'react-toastify';
 
 const SignUp = () => {
-    const {signUp} = useContext(AuthContext) 
+    const {signUp, handleError, handleSuccess} = useContext(AuthContext) 
     const navigate = useNavigate()
 
     // handle sign-up btn
@@ -22,14 +23,16 @@ const SignUp = () => {
             const newUser = result.user;
             console.log(newUser)
             form.reset()
-            navigate('/sign-in')
+            
+            handleSuccess()
         })
         .catch(error => {
-            console.log(error)
+            handleError(error.message)
         })
     }
     return (
         <Container className='mt-5'>
+            <ToastContainer/>
             <div className='w-50 mx-auto border py-5 px-5 rounded'>
             <h1 className='text-center mb-5'>Please Sign up!!</h1>
             <Form onSubmit={handleSignUpBtn}>
