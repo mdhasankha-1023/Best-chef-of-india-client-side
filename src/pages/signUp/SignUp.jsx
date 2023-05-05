@@ -41,20 +41,20 @@ const SignUp = () => {
             <Form onSubmit={handleSignUpBtn}>
                 <Form.Group className="mb-3">
                     <Form.Label className='fs-4'>Name</Form.Label>
-                    <Form.Control name='name' className='py-3 fs-4' type="text" placeholder="Enter your full name" />
+                    <Form.Control name='name' className='py-3 fs-4' type="text" placeholder="Enter your full name" required />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className='fs-4'>Email</Form.Label>
-                    <Form.Control name='email' className='py-3 fs-4' type="email" placeholder="Enter email" />
+                    <Form.Control name='email' className='py-3 fs-4' type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
                     <Form.Label className='fs-4'>Password</Form.Label>
-                    <Form.Control name='password' className='py-3 fs-4' type="password" placeholder="Password" />
+                    <Form.Control name='password' className='py-3 fs-4' type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className='fs-4'>Photo URL</Form.Label>
-                    <Form.Control name='photoUrl' className='py-3 fs-4' type="text" placeholder="Photo url" />
+                    <Form.Control name='photoUrl' className='py-3 fs-4' type="text" placeholder="Photo url" required />
                 </Form.Group>
                 <Button className='w-100 py-2 fs-4 mt-5 ' variant="danger" type="submit">
                     Sign up

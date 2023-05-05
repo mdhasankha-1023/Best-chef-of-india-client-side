@@ -1,6 +1,7 @@
 nav a{
     text-decoration:  none;
     color: black;
+    margin-right: 30px;
 }
 nav a:hover{
     color: #E9351F;
@@ -15,4 +16,5 @@ nav a:hover{
 .btn-link:hover{
     color: white;
 }
+
 

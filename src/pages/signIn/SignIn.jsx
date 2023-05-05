@@ -79,12 +79,12 @@ const SignIn = () => {
                 <Form onSubmit={handleSignInForm}>
                     <Form.Group className="mb-3">
                         <Form.Label className='fs-4'>Email</Form.Label>
-                        <Form.Control className='py-3 fs-4' type="email" name='email' placeholder="Enter email" />
+                        <Form.Control className='py-3 fs-4' type="email" name='email' placeholder="Enter email" required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label className='fs-4'>Password</Form.Label>
-                        <Form.Control className='py-3 fs-4' type="password" name='password' placeholder="Password" />
+                        <Form.Control className='py-3 fs-4' type="password" name='password' placeholder="Password" required/>
                     </Form.Group>
                     <Button className='w-100 py-2 fs-4 mt-4 ' variant="danger" type="submit">
                         Sign In
