@@ -14,7 +14,7 @@ const ChefRecipes = () => {
     return (
         <div>
             <ChefBanner></ChefBanner>
-            <AllRecipes data={recipes}></AllRecipes>
+            <AllRecipes>{recipes}</AllRecipes>
         </div>
     );
 };

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Card, Container } from 'react-bootstrap';
+import { Button, Card, Container } from 'react-bootstrap';
 import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Recipe = ({ recipe }) => {
     const { cooking_method, name, rating, img, ingredients } = recipe;
@@ -10,7 +11,7 @@ const Recipe = ({ recipe }) => {
     // handleHeartBtn
     const handleHeartBtn = () => {
         setIsClicked(!isClicked)
-        console.log(isClicked)
+        toast.success(`Add To Favorite ${name}`)
     }
     return (
         <Container className='mt-5'>
@@ -31,15 +32,19 @@ const Recipe = ({ recipe }) => {
                         </span>
                     </Card.Text>
                     <div className='d-flex align-items-center justify-content-between'>
-                    <Card.Text>
-                        <Rating className='me-2 fs-4 text-warning'
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderRating={rating}
-                            placeholderSymbol={<FaStar></FaStar>}
-                            readonly
-                        />
-                    </Card.Text>
-                    <FaHeart onClick={handleHeartBtn} className={isClicked === true ? 'text-danger' : 'text-dark'} size='2em'></FaHeart>
+                        <Card.Text>
+                            <Rating className='me-2 fs-4 text-warning'
+                                emptySymbol={<FaRegStar></FaRegStar>}
+                                placeholderRating={rating}
+                                placeholderSymbol={<FaStar></FaStar>}
+                                readonly
+                            />
+                        </Card.Text>
+                        <Button onClick={handleHeartBtn}
+                            className={isClicked === true && 'text-danger disabled'} variant='light'>
+                            <FaHeart size='2em'></FaHeart>
+                        </Button>
+
                     </div>
 
                 </Card.Body>

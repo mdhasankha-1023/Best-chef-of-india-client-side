@@ -23,7 +23,6 @@ const SignUp = () => {
             const newUser = result.user;
             console.log(newUser)
             form.reset()
-            
             handleSuccess()
         })
         .catch(error => {
@@ -32,7 +31,11 @@ const SignUp = () => {
     }
     return (
         <Container className='mt-5'>
-            <ToastContainer/>
+            <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            theme="light"
+            />
             <div className='w-50 mx-auto border py-5 px-5 rounded'>
             <h1 className='text-center mb-5'>Please Sign up!!</h1>
             <Form onSubmit={handleSignUpBtn}>

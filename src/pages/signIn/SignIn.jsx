@@ -69,7 +69,11 @@ const SignIn = () => {
 
     return (
         <Container className='my-5'>
-            <ToastContainer/>
+            <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            theme="light"
+            />
             <div className='w-50 mx-auto border py-3 px-5 rounded'>
                 <h1 className='text-center mb-3'>Please Sign In!!</h1>
                 <Form onSubmit={handleSignInForm}>

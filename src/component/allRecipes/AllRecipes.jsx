@@ -1,14 +1,20 @@
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../recipe/Recipe';
 import { Col, Container, Row } from 'react-bootstrap';
+import { ToastContainer } from 'react-toastify';
 
-const AllRecipes = ({ data }) => {
+const AllRecipes = ({ children }) => {
     const chef = useLoaderData();
     const { id } = chef;
-    const chefRecipes = data.filter(c => c.chef_id == id)
+    const chefRecipes = children.filter(c => c.chef_id == id)
 
     return (
         <Container className='mt-5'>
+            <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            theme="light"
+            />
             <h1 className='text-center my-3'>Recipes</h1>
             <Row>
                 {

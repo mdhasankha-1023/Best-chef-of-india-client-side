@@ -3,6 +3,7 @@ import Header from '../component/shared/header/Header';
 import { Outlet } from 'react-router-dom';
 import Footer from '../component/shared/footer/Footer';
 
+
 const OthersPage = () => {
     return (
         <div>
